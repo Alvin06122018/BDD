@@ -1,0 +1,21 @@
+package Page;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class BasePage {
+	static WebDriver driver;
+	public BasePage(WebDriver driver) 
+	{
+	   this.driver = driver;
+	}
+	public static void waitForPageToload(By locator)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+
+}
